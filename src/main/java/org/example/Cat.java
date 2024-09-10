@@ -5,17 +5,19 @@ import java.util.Objects;
 public class Cat {
 
     private String name;
-    private String gender;
     private String breed;
+    private String color;
+    private String gender;
     private int age;
     private int id;
 
     public Cat() {}
 
-    public Cat(String name, String breed, String gender, int age) {
+    public Cat(String name, String breed, String color, String gender, int age) {
         this.name = Objects.requireNonNull(name, "Name не может быть null");
         this.gender = Objects.requireNonNull(gender, "Gender не может быть null");
         this.breed = Objects.requireNonNull(breed, "Breed не может быть null");
+        this.color = Objects.requireNonNull(color, "color не может быть null");
 
         if (age < 0) {
             throw new IllegalArgumentException("Возраст должен быть не отрицательным");
@@ -35,12 +37,16 @@ public class Cat {
         return name;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
     public String getBreed() {
         return breed;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getGender() {
+        return gender;
     }
 
     public int getAge() {
